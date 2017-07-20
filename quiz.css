@@ -1,0 +1,73 @@
+body {
+	background-color: #FEDEFE;
+	padding: 20px;
+}
+
+#myQuiz {
+	font-family: Serif; font-size: 16px; width: 650px; height: 650px;
+	position: relative; overflow: hidden;
+	color: #FFF; /* background: #000 url(.../images/pet.jpg) no-repeat 0px 0px; */
+}
+
+#myQuiz h1  {
+	font-size: 2em; text-transform: uppercase; margin: 0;
+	position: absolute; top: 25px; left: 36px;
+}
+
+#myQuiz h1 span {
+	display: block; font-family: sans-Serif; font-size: 3.2em; line-height: 65px
+}
+
+#myQuiz h2 { font-size: 3em; margin: 0; }
+
+#myQuiz h3 { font-size: 2.4em; margin: 0; }
+
+#myQuiz p { margin: 0 0 14px 0; }
+
+#myQuiz .btn {
+	display: inline-block; cursor: pointer; background-color: #C04B01;
+	color: #FFF; text-decoration: none; padding: 5px 15px; border-radius: 6px;
+}
+
+/* intro */
+#myQuiz .intro { position: relative; top: 225px; left: 660px; width: 550px; }
+
+#myQuiz .intro p { margin: 0 0 40px 0; }
+
+/* questions */
+#myQuiz .question { width: 550px; position: absolute; top: 225px; left; 40px; }
+
+#myQuiz .question .txt { font-size: 1.6em; margin: 0 0 20px 0; }
+
+#myQuiz .question .ans {
+	display: inline-block; font-size: 1.1em; width: 225px; border: 2px solid rgba(238,189,102,.4);
+	border-radius: 6px; padding: 10px; margin: 0 15px 15px 0; position: relative;
+}
+
+#myQuiz .answered .feedback { visibility: visible; opacity: 1; margin-top: 10px; }
+
+/* Results */
+#myQuiz .results { position: absolute: top: 225px; left: 660px; width: 550px; }
+
+#myQuiz .results .share { margin-top: 40px; }
+
+#myQuiz .results .share a.btn {
+	margin-right: 20px; padding: 9px 15px 8px 42px; background-repeat: no-repeat;
+	background-position: 10px 5px;
+	background-size: 25px 25px;
+}
+
+#myQuiz .results .share a.btn.email { background-color: #F0A121; background-image: url(.../images/); }
+
+#myQuiz .results .share a.btn.twitter { background-color: #59ADEB; background-image: url(.../images/); }
+
+#myQuiz .active, #myQuiz .inactive { transition: left 1.5s ease-in-out; }
+
+#myQuiz .active { left: 40px; }
+
+#myQuiz .intro.inactive, #myQuiz .inactive.answered { left: 1350px; }
+
+/* test */
+#myQuiz { height: 100px;  }
+
+#myQuiz .results { top: 650px !important; left: !important; }

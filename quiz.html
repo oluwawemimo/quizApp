@@ -1,0 +1,46 @@
+<html ng-app="myQuiz">
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="quiz.css">
+	</head>
+	<body>
+		<div id="myQuiz" ng-controller="QuizController">
+			
+			<h1>Test Your Knowlegde:<span>Quiz</span></h1>
+			<div class="progress">
+				<div class="{{ ($index === activeQuestion) ? 'on' : 'off' }}" ng-repeat="myQuestion in myQuestions"></div>
+			</div>
+			<div class="intro {{ (activeQuestion > -1) ? 'inactive' : 'active' }}">
+				<h2>Welcome</h2>
+				<p>click begin to test your knowlegde about the world.</p>
+				<p class="btn" ng-click="activeQuestion = 0">Begin</p>
+			</div>	
+			<div class="question answered
+				{{ $index === activeQuestion ? 'active' : 'inactive'  }}
+				" ng-repeat="myQuestion in myQuestion">
+				<p class="txt">{{myQuestion}}.{{questions}}</p>
+				<p class="ans"
+					ng-click="selectAnswer($parent.index,$index)"
+					ng-repeat="Answer in myQuestions[$index].answers">
+					{{ Answer.text }}
+				</p>
+				<div class="feedback">
+					<p>You are<strong>correct</strong></p>
+					<p>Oops! That is not correct</p>
+					<p>Additional feedback</p>
+					<div class="btn">Continue</div>
+				</div>
+			</div>
+			<div class="results">
+				<h3>Results</h3>
+				<p> You scored {{ percentage }}% by correctly answering {{score}} of the {{totalQuestions}}questions. </p>
+				<p> Use the link below tyo challenge your friends </p>
+				<div class="share" ng-bind-html="createSharelinks(percentage)"></div>
+			</div>
+		</div>
+		
+		<script src="angular.min.js"></script>
+		<script src="quiz.js"></script>
+	</body>
+</html>
